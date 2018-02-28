@@ -79,6 +79,44 @@
             <version>2.5</version>
         </dependency>
         
+        <!-- orm -->
+		<dependency>
+            <groupId>alun.test</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.8.5</version>
+        </dependency>
+		<dependency>
+            <groupId>alun.test</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.8.0</version>
+        </dependency>
+		<dependency>
+            <groupId>alun.test</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.0</version>
+        </dependency>
+		<dependency>
+            <groupId>alun.test</groupId>
+            <artifactId>finallygo-tools</artifactId>
+            <version>1.0</version>
+        </dependency>
+		<dependency>
+            <groupId>alun.test</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.11</version>
+        </dependency>
+		<dependency>
+            <groupId>alun.test</groupId>
+            <artifactId>mysqldriver</artifactId>
+            <version>1.0</version>
+        </dependency>
+		<dependency>
+            <groupId>alun.test</groupId>
+            <artifactId>ojdbc</artifactId>
+            <version>14</version>
+        </dependency>
+
+
   </dependencies>
   
   <build>
