@@ -25,9 +25,7 @@ public class UserControllerTest {
 			.body(Mono.just(user),User.class)
 			.exchange()
 			.expectStatus().isOk()
-			.expectBody().jsonPath("name").isEqualTo("Test");
-		
-		
+			.expectBody().jsonPath("$[0].name").isEqualTo("yuyilun");
 	}
 
 }
