@@ -13,7 +13,7 @@ public class SSEClientTest {
        
 		WebClient webClient = WebClient.create();
 		webClient.get()
-			.uri("")
+			.uri("http://localhost:8080/sse/randomNumbers")
 			.accept(MediaType.TEXT_EVENT_STREAM)
 			.exchange()
 			.flatMapMany(response -> response.body(BodyExtractors.toFlux(

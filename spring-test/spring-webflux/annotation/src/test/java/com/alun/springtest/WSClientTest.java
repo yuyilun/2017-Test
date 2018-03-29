@@ -12,8 +12,8 @@ public class WSClientTest {
 
 	public static void main(String[] args) {
 		WebSocketClient webSocketClient = new ReactorNettyWebSocketClient();
-		webSocketClient.execute(URI.create("ws:localhost:8080/echo"), session -> 
-			session.send(Flux.just(session.textMessage("hello")))
+		webSocketClient.execute(URI.create("ws:localhost:8080/echo"), 
+			session -> session.send(Flux.just(session.textMessage("hello")))
 				.thenMany(session.receive().take(1).map(WebSocketMessage::getPayloadAsText))
 				.doOnNext(System.out::println)
 				.then())

@@ -16,17 +16,15 @@ public class RESTClientTest {
 		user.setName("Test");
 		user.setEmail("yu10081008@126.com");
 		
-		String url ="http://localhost:8080/user";
+		String url ="http://localhost:8080";
 		WebClient webClient = WebClient.create(url);
 		
-		Mono<Object> createdUser = webClient.post()
-			.uri("")
+		Flux<User> createdUser = webClient.post()
+			.uri("/user")
 			.accept(MediaType.APPLICATION_JSON)
-			.body(Flux.just(user),User.class)
+			.body(Mono.just(user),User.class)
 			.exchange()
-			.flatMap(response -> response.bodyToMono(User.class));
-		
-		System.out.println(createdUser.block());
-		
+			.flatMapMany(response -> response.bodyToFlux(User.class));
+		System.err.println(createdUser.blockFirst());
 	}
 }
