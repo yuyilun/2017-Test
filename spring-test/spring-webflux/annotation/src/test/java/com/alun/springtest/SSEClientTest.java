@@ -20,7 +20,7 @@ public class SSEClientTest {
 					new ParameterizedTypeReference<ServerSentEvent<String>>() {})))
 			.filter(sse -> Objects.nonNull(sse.data()))
 			.map(ServerSentEvent::data)
-			.buffer(10)
+			.buffer(1)
 			.doOnNext(System.out::println)
 			.blockFirst();
     }

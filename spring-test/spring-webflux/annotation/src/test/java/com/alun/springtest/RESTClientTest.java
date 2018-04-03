@@ -24,7 +24,21 @@ public class RESTClientTest {
 			.accept(MediaType.APPLICATION_JSON)
 			.body(Mono.just(user),User.class)
 			.exchange()
-			.flatMapMany(response -> response.bodyToFlux(User.class));
+			.flatMapMany(response -> response.bodyToFlux(User.class))
+			.doOnNext(user1 -> {
+				String result ="ID: "+user1.getId()+" ,NAME: "+ user1.getName() + " ,EMAIL: "+user1.getEmail();
+				System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+				System.out.println(result);
+				System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+			});
+		
+		//这里取不到值，其实是下一个已经放到客户端中了。
+	/*	createdUser.doOnNext(user1 -> {
+			String result ="ID: "+user1.getId()+" ,NAME: "+ user1.getName() + " ,EMAIL: "+user1.getEmail();
+			System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+			System.out.println(result);
+			System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+		});*/
 		System.err.println(createdUser.blockFirst());
 	}
 }
