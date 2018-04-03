@@ -17,7 +17,7 @@ public class SSEClientTest {
 			.accept(MediaType.TEXT_EVENT_STREAM)
 			.exchange()
 			.flatMapMany(response -> response.body(BodyExtractors.toFlux(
-					new ParameterizedTypeReference<ServerSentEvent<String>>() {})))
+					new ParameterizedTypeReference<ServerSentEvent<Integer>>() {})))
 			.filter(sse -> Objects.nonNull(sse.data()))
 			.map(ServerSentEvent::data)
 			.buffer(1)
