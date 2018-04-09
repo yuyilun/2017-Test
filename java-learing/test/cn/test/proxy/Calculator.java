@@ -24,7 +24,6 @@ public interface Calculator {
 
 		@Override
 		public void lazyAction(int a, int b) {
-			// TODO Auto-generated method stub
 			
 		}
 	}
@@ -38,7 +37,7 @@ public interface Calculator {
 		
 		@Override
 		public int add(int a, int b) {
-			 //Ö´ÐÐÒ»Ð©²Ù×÷
+			 //Ö´ï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½ï¿½
             System.out.println("begin ");
             int result = cl.add(a, b);
             System.out.println("end ");
@@ -52,7 +51,6 @@ public interface Calculator {
 
 		@Override
 		public void lazyAction(int a, int b) {
-			// TODO Auto-generated method stub
 			
 		}
 		

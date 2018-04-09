@@ -121,7 +121,7 @@ public class Tools {
             throw new RuntimeException("不支持的参数");  
         }  
         else {  
-            //TODO 还有很多其他的类型，char、double之类的依次类推，也可以做List<>, Array, Map之类的转化  
+            //还有很多其他的类型，char、double之类的依次类推，也可以做List<>, Array, Map之类的转化  
             return null;  
         }  
     } 

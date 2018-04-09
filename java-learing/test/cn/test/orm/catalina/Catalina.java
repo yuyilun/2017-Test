@@ -17,7 +17,6 @@ public class Catalina {
 	}
 
 	private static void testJdbcTemplateSelect() {
-		// TODO Auto-generated method stub
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(ConnectHelper.getConn(),true);
 		String sql = AnalyzeSqlXml.getSql("selectBooks3");
 		Map map = (Map)jdbcTemplate.executeQuery(sql, new Object[] {new Long(3)}).get(0);

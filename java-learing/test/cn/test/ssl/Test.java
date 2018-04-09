@@ -12,7 +12,6 @@ import javax.net.ssl.TrustManagerFactory;
 public class Test {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		/**
 		 * 1 openssl pkcs12 -export -clcerts -name chenkangxian
