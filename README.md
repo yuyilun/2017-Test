@@ -1,7 +1,7 @@
 # 2017-Test
 
-java-learing 研究java相关用法
+20180410，重构整个目录
 
-spring-test 研究spring相关用法
+
 
 
