@@ -14,8 +14,14 @@ https://jingyan.baidu.com/article/54b6b9c086aa3d2d583b47e5.html
 （2）基本原理
 https://blog.csdn.net/chunlongyu/article/details/52525604
 https://blog.csdn.net/chancein007/article/details/53730991
-
 https://blog.csdn.net/zjcjava/article/details/78893368
+
+二、分布式架构网络通讯原理
+1、传输的标准格式是什么？ 
+2、怎么样将请求转化为传输的流？ 
+3、 怎么接收和处理流？ 
+4、传输协议是？
+
 
 
 
