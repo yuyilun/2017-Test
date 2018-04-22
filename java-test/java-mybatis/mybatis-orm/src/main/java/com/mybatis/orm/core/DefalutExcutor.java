@@ -22,10 +22,11 @@ public class DefalutExcutor implements Excutor {
 		
 		try {
 			pre = connection.prepareStatement(statement);
+			pre.setString(1,  parameter.toString());
 			set = pre.executeQuery();
 			User u =new User();
 			while(set.next()) {
-				u.setId(set.getString(1));
+				u.setId(set.getInt(1));
 				u.setUsername(set.getString(2));
 				u.setPassword(set.getString(3));
 			}

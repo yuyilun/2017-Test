@@ -17,7 +17,7 @@ import com.mybatis.orm.core.bean.Function;
 import com.mybatis.orm.core.bean.MapperBean;
 
 /**
- * ¼ÓÔØÅäÖÃÎÄ¼þ
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
  * @author yuyilun
  *
  */
@@ -27,7 +27,7 @@ public class Configuration {
 	private static ClassLoader loader = ClassLoader.getSystemClassLoader();
 	
 	/**
-	 * ¶ÁÈ¡Êý¾ÝÔ´
+	 * ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ô´
 	 * @param resource
 	 * @return
 	 */
@@ -49,7 +49,7 @@ public class Configuration {
 	private Connection evalDataSource(Element node) throws ClassNotFoundException {
 		
 		
-		if(node.getName().equals("database")) {
+		if(!node.getName().equals("database")) {
 			throw new RuntimeException("root should be <database>");
 		}
 		
@@ -61,7 +61,7 @@ public class Configuration {
 		for(Object item : node.elements("property")) {
 			Element i = (Element) item;
 			String value = getValue(i);
-			String name = i.attributeValue(value);
+			String name = i.attributeValue("name");
 			
 			if(name == null  || value == null) {
 				throw new RuntimeException("[database]: <property> should contain name and value");
@@ -105,7 +105,7 @@ public class Configuration {
 			Document document = saxReader.read(inputStream);
 			Element rootElement = document.getRootElement();
 			
-			mapper.setInterfaceName(rootElement.attributeValue("namespace").trim());
+			mapper.setInterfaceName(rootElement.attributeValue("nameSpace").trim());
 			
 			List<Function> list = new ArrayList<Function>();
 			

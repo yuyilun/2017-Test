@@ -5,11 +5,11 @@ import com.mybatis.orm.pojo.User;
 public interface UserMapper {
 	
 	/**
-	 * 查询用户信息
+	 * 锟斤拷询锟矫伙拷锟斤拷息
 	 * @param id
 	 * @return
 	 */
-	User getUserById(String id);
+	User getUserById(int id);
 	
 
 }

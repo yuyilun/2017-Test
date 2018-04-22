@@ -1,9 +1,5 @@
 package com.mybatis.orm;
 
-import com.mybatis.orm.core.Sqlsession;
-import com.mybatis.orm.mapper.UserMapper;
-import com.mybatis.orm.pojo.User;
-
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -41,10 +37,5 @@ public class AppTest
     }
     
     
-    public void test1() {
-    	 Sqlsession sqlsession=new Sqlsession();  
-         UserMapper mapper = sqlsession.getMapper(UserMapper.class);  
-         User user = mapper.getUserById("1");  
-         System.out.println(user);
-    }
+  
 }
