@@ -9,7 +9,7 @@ public class BinaryTreeTest {
 	
 	@Test
 	public void test() {
-		 //²åÈë  
+		 //æµ‹è¯•
 		BinaryTree bTree=new BinaryTree(56);
 		for(int i = 0 ; i < 10 ; i++ ){	
 			bTree.insert(new Random().nextInt(200));

@@ -1,16 +1,16 @@
 package cn.test.tree;
 
 /**
- * avl×ÔÆ½ºâ¶ş²æÊ÷
+ * avlè‡ªå¹³è¡¡äºŒå‰æ ‘
  * 
- * 1.±¾ÉíÊ×ÏÈÊÇÒ»¿Ã¶ş²æËÑË÷Ê÷¡£
- * 2.´øÓĞÆ½ºâÌõ¼ş£ºÃ¿¸ö½áµãµÄ×óÓÒ×ÓÊ÷µÄ¸ß¶ÈÖ®²îµÄ¾ø¶ÔÖµ£¨Æ½ºâÒò×Ó£©×î¶àÎª1¡£
- *	Ò²¾ÍÊÇËµ£¬AVLÊ÷£¬±¾ÖÊÉÏÊÇ´øÁËÆ½ºâ¹¦ÄÜµÄ¶ş²æ²éÕÒÊ÷£¨¶ş²æÅÅĞòÊ÷£¬¶ş²æËÑË÷Ê÷£©¡£
+ * 1.æœ¬èº«é¦–å…ˆæ˜¯ä¸€æ£µäºŒå‰æœç´¢æ ‘ã€‚
+ * 2.å¸¦æœ‰å¹³è¡¡æ¡ä»¶ï¼šæ¯ä¸ªç»“ç‚¹çš„å·¦å³å­æ ‘çš„é«˜åº¦ä¹‹å·®çš„ç»å¯¹å€¼ï¼ˆå¹³è¡¡å› å­ï¼‰æœ€å¤šä¸º1ã€‚
+ *	ä¹Ÿå°±æ˜¯è¯´ï¼ŒAVLæ ‘ï¼Œæœ¬è´¨ä¸Šæ˜¯å¸¦äº†å¹³è¡¡åŠŸèƒ½çš„äºŒå‰æŸ¥æ‰¾æ ‘ï¼ˆäºŒå‰æ’åºæ ‘ï¼ŒäºŒå‰æœç´¢æ ‘ï¼‰ã€‚
  * 
- * £¨1£©¶ÔAµÄ×ó¶ş×ÓµÄ×ó×ÓÊ÷½øĞĞÒ»´Î²åÈë
- * £¨2£©¶ÔAµÄ×ó¶ş×ÓµÄÓÒ×ÓÊ÷½øĞĞÒ»´Î²åÈë
- * £¨3£©¶ÔAµÄÓÒ¶ù×ÓµÄ×ó×ÓÊ÷½øĞĞÒ»´Î²åÈë
- * £¨4£©¶ÔAµÄÓÒ¶ù×ÓµÄÓÒ×ÓÊ÷½øĞĞÒ»´Î²åÈë
+ * ï¼ˆ1ï¼‰å¯¹Açš„å·¦äºŒå­çš„å·¦å­æ ‘è¿›è¡Œä¸€æ¬¡æ’å…¥
+ * ï¼ˆ2ï¼‰å¯¹Açš„å·¦äºŒå­çš„å³å­æ ‘è¿›è¡Œä¸€æ¬¡æ’å…¥
+ * ï¼ˆ3ï¼‰å¯¹Açš„å³å„¿å­çš„å·¦å­æ ‘è¿›è¡Œä¸€æ¬¡æ’å…¥
+ * ï¼ˆ4ï¼‰å¯¹Açš„å³å„¿å­çš„å³å­æ ‘è¿›è¡Œä¸€æ¬¡æ’å…¥
  * 
  * 
  * 
@@ -19,19 +19,19 @@ package cn.test.tree;
  */
 public class AVLTree<T extends Comparable<T>> {
 	
-	//private AVLTree<T> root;	// ¸ù½áµã
+	//private AVLTree<T> root;	// æ ¹ç»“ç‚¹
 	
     /**
-     * AVLÊ÷µÄ½Úµã(ÄÚ²¿Àà)
+     * AVLæ ‘çš„èŠ‚ç‚¹(å†…éƒ¨ç±»)
      * @author xyd-yuyilun
      * @param <T>
      */
 	 @SuppressWarnings("hiding")
 	class AVLTreeNode<T extends Comparable<T>> {
-        T key;                // ¹Ø¼ü×Ö(¼üÖµ)
-        int height;         // ¸ß¶È
-        AVLTreeNode<T> left;    // ×óº¢×Ó
-        AVLTreeNode<T> right;    // ÓÒº¢×Ó
+        T key;                // å…³é”®å­—(é”®å€¼)
+        int height;         // é«˜åº¦
+        AVLTreeNode<T> left;    // å·¦å­©å­
+        AVLTreeNode<T> right;    // å³å­©å­
 
         public AVLTreeNode(T key, AVLTreeNode<T> left, AVLTreeNode<T> right) {
             this.key = key;
@@ -47,7 +47,7 @@ public class AVLTree<T extends Comparable<T>> {
 	 
 	 
 	 /*
-	  * »ñÈ¡Ê÷µÄ¸ß¶È£¬Èç¹ûÎª¿ÕÊé£¬ÔòÎª -1
+	  * è·å–æ ‘çš„é«˜åº¦ï¼Œå¦‚æœä¸ºç©ºä¹¦ï¼Œåˆ™ä¸º -1
 	  */
 	 private int height(AVLTreeNode<T> tree) {
 		 return tree == null ? -1 : tree.height;
@@ -56,13 +56,13 @@ public class AVLTree<T extends Comparable<T>> {
 		
 	 
 	 /**
-	  * Æ½ºâÒò×Ó
+	  * å¹³è¡¡å› å­
 	  */
 	 private static final int ALLOWED_IMBALANCE = 1;
 	 
 	 
 	 /**
-	  * ½«²»Æ½ºâµÄavlÊ÷£¬Í¨¹ı×ÔĞı×ªÉú³ÉĞÂµÄÆ½ºâµÄavlÊ÷
+	  * å°†ä¸å¹³è¡¡çš„avlæ ‘ï¼Œé€šè¿‡è‡ªæ—‹è½¬ç”Ÿæˆæ–°çš„å¹³è¡¡çš„avlæ ‘
 	  * @param tree
 	  * @return
 	  */
@@ -72,14 +72,14 @@ public class AVLTree<T extends Comparable<T>> {
 			 return tree;
 		 }
 		 
-		 if(height(tree.left) - height(tree.right) > ALLOWED_IMBALANCE) {	//×ó×ÓÊ÷Ê§ºâ£¬Ì«³¤ÁË
+		 if(height(tree.left) - height(tree.right) > ALLOWED_IMBALANCE) {	//å·¦å­æ ‘å¤±è¡¡ï¼Œå¤ªé•¿äº†
 			 if(height(tree.left.left) >= height(tree.left.right)) {
 				 tree = leftLeftRotation(tree);
 			 }else {
 				 tree = leftRightRotation(tree);
 			 }
 			 
-		 }else if(height(tree.right) - height(tree.left) > ALLOWED_IMBALANCE) {		//ÓÒ×ÓÊ÷Ê§ºâ
+		 }else if(height(tree.right) - height(tree.left) > ALLOWED_IMBALANCE) {		//å³å­æ ‘å¤±è¡¡
 			 if(height(tree.right.right) >= height(tree.right.left)) {
 				 tree = rightRightRotation(tree);
 			 }else { 
@@ -88,56 +88,56 @@ public class AVLTree<T extends Comparable<T>> {
 			 
 		 }
 		 
-		 tree.height = Math.max(height(tree.left), height(tree.right)) + 1;//ÖØĞÂÆ½ºâ¸ß¶È
+		 tree.height = Math.max(height(tree.left), height(tree.right)) + 1;//é‡æ–°å¹³è¡¡é«˜åº¦
 		 return tree;
 	 }
 	
 	 /**
-	  * µ±Ç°½ÚµãµÄ×ó×ÓÊ÷µÄ×ó×Ó½ÚµãÊ§ºâ£¬ĞèÒªÆ½ºâ
-	  * µ¥Ğı×ª
-	  * µ±Ç°½ÚµãµÄ×ó×ÓÊ÷ÉÏÒÆ£¬ÖØĞÂÆ½ºâ
+	  * å½“å‰èŠ‚ç‚¹çš„å·¦å­æ ‘çš„å·¦å­èŠ‚ç‚¹å¤±è¡¡ï¼Œéœ€è¦å¹³è¡¡
+	  * å•æ—‹è½¬
+	  * å½“å‰èŠ‚ç‚¹çš„å·¦å­æ ‘ä¸Šç§»ï¼Œé‡æ–°å¹³è¡¡
 	  * @param tree
 	  * @return
 	  */
 	 private AVLTreeNode<T> leftLeftRotation(AVLTreeNode<T> tree) {
-		 //È¡µ½×ó×ÓÊ÷
+		 //å–åˆ°å·¦å­æ ‘
 		 AVLTreeNode<T> leftChild = tree.left;
-		 //µ±Ç°½ÚµãµÄµÄ×ó×ÓÊ÷ÖØĞÂÈ¡Öµ£¬È¡×ó×ÓÊ÷µÄÓÒ½Úµã¡£
+		 //å½“å‰èŠ‚ç‚¹çš„çš„å·¦å­æ ‘é‡æ–°å–å€¼ï¼Œå–å·¦å­æ ‘çš„å³èŠ‚ç‚¹ã€‚
 		 tree.left = leftChild.right;
-		 //½«µ±Ç°½ÚµãÏÂ³Á£¬×÷Îª×ó×ÓÊ÷µÄÓÒ½Úµã£»×ó×ÓÊ÷×÷Îªµ±Ç°½Úµã
+		 //å°†å½“å‰èŠ‚ç‚¹ä¸‹æ²‰ï¼Œä½œä¸ºå·¦å­æ ‘çš„å³èŠ‚ç‚¹ï¼›å·¦å­æ ‘ä½œä¸ºå½“å‰èŠ‚ç‚¹
 		 leftChild.right = tree;
-		 //ÖØĞÂ¼ÆËã¸ß¶È
+		 //é‡æ–°è®¡ç®—é«˜åº¦
 		 tree.height = Math.max(height(tree.left), height(tree.right)) + 1;
 		 leftChild.height = Math.max(height(leftChild.left), height(leftChild.right)) + 1;
-		 return leftChild;//·µ»Øµ±Ç°½Úµã
+		 return leftChild;//è¿”å›å½“å‰èŠ‚ç‚¹
 	 }
 	 
 	 /**
-	  * ÓëleftLeftRotationµ¥Ğı×ªÊÇÒ»ÑùµÄ
-	  * µ±Ç°½ÚµãµÄÓÒ×ÓÊ÷µÄÓÒ½ÚµãÊ§ºâ
-	  * ÆäÊµÊÇµ±Ç°½ÚµãµÄÓÒ×ÓÊ÷ÉÏÒÆÖØĞÂÆ½ºâ
+	  * ä¸leftLeftRotationå•æ—‹è½¬æ˜¯ä¸€æ ·çš„
+	  * å½“å‰èŠ‚ç‚¹çš„å³å­æ ‘çš„å³èŠ‚ç‚¹å¤±è¡¡
+	  * å…¶å®æ˜¯å½“å‰èŠ‚ç‚¹çš„å³å­æ ‘ä¸Šç§»é‡æ–°å¹³è¡¡
 	  * @param tree
 	  * @return
 	  */
 	 private AVLTreeNode<T> rightRightRotation(AVLTreeNode<T> tree) {
-		 //È¡µ±Ç°½ÚµãµÄÓÒ×ÓÊ÷
+		 //å–å½“å‰èŠ‚ç‚¹çš„å³å­æ ‘
 		 AVLTreeNode<T> rightChild = tree.right;
-		 //½«µ±Ç°½ÚµãµÄÓÒ×ÓÊ÷ÖØĞÂ¸´ÖÆÎªÓÒ×ÓÊ÷µÄ×ó½Úµã
+		 //å°†å½“å‰èŠ‚ç‚¹çš„å³å­æ ‘é‡æ–°å¤åˆ¶ä¸ºå³å­æ ‘çš„å·¦èŠ‚ç‚¹
 		 tree.right = rightChild.left;
-		 //½«µ±Ç°½ÚµãÏÂ³Á£¬×÷ÎªÓÒ×ÓÊ÷µÄ×ó½Úµã£¬ÓÒ×ÓÊ÷×÷Îªµ±Ç°½Úµã
+		 //å°†å½“å‰èŠ‚ç‚¹ä¸‹æ²‰ï¼Œä½œä¸ºå³å­æ ‘çš„å·¦èŠ‚ç‚¹ï¼Œå³å­æ ‘ä½œä¸ºå½“å‰èŠ‚ç‚¹
 		 rightChild.left = tree;
-		 //ÖØĞÂ¼ÆËã¸ß¶È
+		 //é‡æ–°è®¡ç®—é«˜åº¦
 		 tree.height = Math.max(height(tree.left), height(tree.right)) + 1;
 		 rightChild.height = Math.max(height(rightChild.right), height(rightChild.left)) + 1;
-		 return rightChild;//·µ»ØÓÒ×ÓÊ÷
+		 return rightChild;//è¿”å›å³å­æ ‘
 	 }
 	 
 	 /**
-	  * ÓÉÓÚÒ»´ÎĞı×ª´ï²»µ½×ÔÆ½ºâ£¬ĞèÒª¶à´Î
-	  * ×ó×ÓÊ÷µÄÓÒ½ÚµãÊ§ºâ£º
-	  * 1¡¢ÏÈ½«µ±Ç°½ÚµãµÄ×ó×ÓÊ÷µÄÓÒ×Ó½ÚµãÉÏÒÆ,±ä³Éµ±Ç°½ÚµãµÄ×ó×ÓÊ÷
-	  * 2¡¢ÔÙ½«µ±Ç°½ÚµãµÄ×ó½ÚµãÉÏÒÆ
-	  * 3¡¢·µ»Øµ±Ç°½Úµã
+	  * ç”±äºä¸€æ¬¡æ—‹è½¬è¾¾ä¸åˆ°è‡ªå¹³è¡¡ï¼Œéœ€è¦å¤šæ¬¡
+	  * å·¦å­æ ‘çš„å³èŠ‚ç‚¹å¤±è¡¡ï¼š
+	  * 1ã€å…ˆå°†å½“å‰èŠ‚ç‚¹çš„å·¦å­æ ‘çš„å³å­èŠ‚ç‚¹ä¸Šç§»,å˜æˆå½“å‰èŠ‚ç‚¹çš„å·¦å­æ ‘
+	  * 2ã€å†å°†å½“å‰èŠ‚ç‚¹çš„å·¦èŠ‚ç‚¹ä¸Šç§»
+	  * 3ã€è¿”å›å½“å‰èŠ‚ç‚¹
 	  * @param tree
 	  * @return
 	  */
@@ -147,10 +147,10 @@ public class AVLTree<T extends Comparable<T>> {
 	 }
 	 
 	 /**
-	  * µ±Ç°½ÚµãµÄÓÒ×ÓÊ÷µÄ×ó×ÓÊ÷Ê§ºâ£º
-	  * 1¡¢ÏÈ½«µ±Ç°½ÚµãµÄÓÒ×ÓÊ÷µÄ×ó×ÓÊ÷ÉÏÒÆ£¬±ä³Éµ±Ç°½ÚµãµÄÓÒ×ÓÊ÷
-	  * 2¡¢ÔÙ½«µ±Ç°½ÚµãµÄÓÒ×ÓÊ÷ÉÏÒÆ
-	  * 3¡¢·µ»Øµ±Ç°½Úµã
+	  * å½“å‰èŠ‚ç‚¹çš„å³å­æ ‘çš„å·¦å­æ ‘å¤±è¡¡ï¼š
+	  * 1ã€å…ˆå°†å½“å‰èŠ‚ç‚¹çš„å³å­æ ‘çš„å·¦å­æ ‘ä¸Šç§»ï¼Œå˜æˆå½“å‰èŠ‚ç‚¹çš„å³å­æ ‘
+	  * 2ã€å†å°†å½“å‰èŠ‚ç‚¹çš„å³å­æ ‘ä¸Šç§»
+	  * 3ã€è¿”å›å½“å‰èŠ‚ç‚¹
 	  * @param tree
 	  * @return
 	  */
@@ -160,17 +160,17 @@ public class AVLTree<T extends Comparable<T>> {
 	 }
 	 
 	 /**
-	  * ĞÂÔöÒ»¸ö½Úµã
-	  * 1¡¢Ñ­»·²éÑ¯ĞèÒª²åÈëµÄ½ÚµãÎ»ÖÃ
-	  * 2¡¢½«ĞÂµÄ½ÚµãÉèÖÃÎªµ±Ç°½ÚµãµÄ×ó½Úµã»òÕßÓÒ½Úµã
-	  * 3¡¢ÖØĞÂÆ½ºâµ±Ç°½Úµã
+	  * æ–°å¢ä¸€ä¸ªèŠ‚ç‚¹
+	  * 1ã€å¾ªç¯æŸ¥è¯¢éœ€è¦æ’å…¥çš„èŠ‚ç‚¹ä½ç½®
+	  * 2ã€å°†æ–°çš„èŠ‚ç‚¹è®¾ç½®ä¸ºå½“å‰èŠ‚ç‚¹çš„å·¦èŠ‚ç‚¹æˆ–è€…å³èŠ‚ç‚¹
+	  * 3ã€é‡æ–°å¹³è¡¡å½“å‰èŠ‚ç‚¹
 	  * @param tree
 	  * @param key
 	  * @return
 	  */
 	 public AVLTreeNode<T> insert(AVLTreeNode<T> tree, T key) {
 		 if(tree ==	null) {
-			 //×îºóÒ»´Î½«T£¬Éú³ÉÒ»¸ö½Úµã
+			 //æœ€åä¸€æ¬¡å°†Tï¼Œç”Ÿæˆä¸€ä¸ªèŠ‚ç‚¹
 			 return new AVLTreeNode<T>(key,null,null);
 		 }
 		 
@@ -181,15 +181,15 @@ public class AVLTree<T extends Comparable<T>> {
 		 }else if( compareTo > 0 ) {
 			 tree.right = insert(tree.right, key);
 		 }else {
-			 //±íÊ¾Óëµ±Ç°½ÚµãÖµÏàÍ¬
+			 //è¡¨ç¤ºä¸å½“å‰èŠ‚ç‚¹å€¼ç›¸åŒ
 		 }
 		 return balance(tree);
 	 }
 	 
 	 /**
-	  * ÒÆ³ıÒ»¸ö½Úµã
-	  * 1¡¢Ñ­»·²éÑ¯µ½ĞèÒªÒÆ³ıµÄµ±Ç°½Úµã
-	  * 2¡¢È»ºóÒÆ³ı
+	  * ç§»é™¤ä¸€ä¸ªèŠ‚ç‚¹
+	  * 1ã€å¾ªç¯æŸ¥è¯¢åˆ°éœ€è¦ç§»é™¤çš„å½“å‰èŠ‚ç‚¹
+	  * 2ã€ç„¶åç§»é™¤
 	  * @param tree
 	  * @param key
 	  * @return
@@ -216,7 +216,7 @@ public class AVLTree<T extends Comparable<T>> {
 	 }
 	 
 	 /**
-	  * ÕÒµ½µ±Ç°½ÚµãµÄ×îĞ¡½Úµã
+	  * æ‰¾åˆ°å½“å‰èŠ‚ç‚¹çš„æœ€å°èŠ‚ç‚¹
 	  * @param tree
 	  * @return
 	  */
@@ -234,11 +234,11 @@ public class AVLTree<T extends Comparable<T>> {
 	 
 	 
 	 /**
-     * Ç°Ğò±éÀú  :Ç°Ğò±éÀúÊ×ÏÈ·ÃÎÊ¸ù½áµãÈ»ºó±éÀú×ó×ÓÊ÷£¬×îºó±éÀúÓÒ×ÓÊ÷¡£Preorder Traversal (DLR)
-     * µİ¹éÊµÏÖ
+     * å‰åºéå†  :å‰åºéå†é¦–å…ˆè®¿é—®æ ¹ç»“ç‚¹ç„¶åéå†å·¦å­æ ‘ï¼Œæœ€åéå†å³å­æ ‘ã€‚Preorder Traversal (DLR)
+     * é€’å½’å®ç°
      */
     public void preorderTraversalPub(AVLTreeNode<T> tree) {
-    	System.out.println("Ç°Ğò±éÀú:");
+    	System.out.println("å‰åºéå†:");
     	preorderTraversal(tree);
     	System.out.println();
     }
@@ -246,19 +246,19 @@ public class AVLTree<T extends Comparable<T>> {
     	if(tree == null) {
     		return;
     	}
-		tree.disPlay();//ÏÈ¸ù½Úµã
-		preorderTraversal(tree.left);//×ó×Ó½Úµã
-		preorderTraversal(tree.right);//ÓÒ×Ó½Úµã
+		tree.disPlay();//å…ˆæ ¹èŠ‚ç‚¹
+		preorderTraversal(tree.left);//å·¦å­èŠ‚ç‚¹
+		preorderTraversal(tree.right);//å³å­èŠ‚ç‚¹
     	
     }
     
     
     /**
-     * ÖĞĞò±éÀúµİ¹é²Ù×÷  :ÔÚ¶ş²æÊ÷ÖĞ£¬ÏÈ×óºó¸ùÔÙÓÒ
+     * ä¸­åºéå†é€’å½’æ“ä½œ  :åœ¨äºŒå‰æ ‘ä¸­ï¼Œå…ˆå·¦åæ ¹å†å³
      * Inorder Traversal (LDR)
      */
     public void inorderTraversalPub(AVLTreeNode<T> tree) {
-    	System.out.println("ÖĞĞò±éÀú:");  
+    	System.out.println("ä¸­åºéå†:");  
     	inorderTraversal(tree);  
     	System.out.println();
     }
@@ -268,21 +268,21 @@ public class AVLTree<T extends Comparable<T>> {
      */
     private void inorderTraversal(AVLTreeNode<T> tree) {
     	if(tree == null ) {
-    		return;//Èç¹ûµ±Ç°node½ÚµãÎª¿Õ£¬ÔòÁ¢¼´·µ»Ø
+    		return;//å¦‚æœå½“å‰nodeèŠ‚ç‚¹ä¸ºç©ºï¼Œåˆ™ç«‹å³è¿”å›
     	}
     	inorderTraversal(tree.left);
-    	tree.disPlay();//´òÓ¡×î×ó½Úµã
-    	//È¡×î×ó½ÚµãµÄĞÖµÜ½Úµã
+    	tree.disPlay();//æ‰“å°æœ€å·¦èŠ‚ç‚¹
+    	//å–æœ€å·¦èŠ‚ç‚¹çš„å…„å¼ŸèŠ‚ç‚¹
     	inorderTraversal(tree.right);
     }
     
     /**
-     * ºóĞò±éÀú ,Postorder Traversal (LRD)
-     * ÔÚ¶ş²æÊ÷ÖĞ£¬ÏÈ×óºóÓÒÔÙ¸ù
+     * ååºéå† ,Postorder Traversal (LRD)
+     * åœ¨äºŒå‰æ ‘ä¸­ï¼Œå…ˆå·¦åå³å†æ ¹
      */
     public void postorderTraversalPub(AVLTreeNode<T> tree) {
     	
-    	System.out.println("ºóĞò±éÀú:");
+    	System.out.println("ååºéå†:");
     	postorderTraversal(tree);
     	System.out.println();
     } 
@@ -291,8 +291,8 @@ public class AVLTree<T extends Comparable<T>> {
     	if(tree == null) {
     		return;
     	}
-    	postorderTraversal(tree.left);//×ó×Ó½Úµã
-    	postorderTraversal(tree.right);//ÓÒ×Ó½Úµã
-    	tree.disPlay();//µ±Ç°½Úµã
+    	postorderTraversal(tree.left);//å·¦å­èŠ‚ç‚¹
+    	postorderTraversal(tree.right);//å³å­èŠ‚ç‚¹
+    	tree.disPlay();//å½“å‰èŠ‚ç‚¹
     }
 }

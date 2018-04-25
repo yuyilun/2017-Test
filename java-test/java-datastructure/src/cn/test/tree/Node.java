@@ -1,8 +1,8 @@
 package cn.test.tree;
 
 /**
- * ���Ľڵ㣺 ��ǰ�ڵ㣬���ӽڵ㣬���ӽڵ�
- * @author xyd-yuyilun
+ * 树的节点： 当前节点，左子节点，右子节点
+ * @author yuyilun
  *
  */
 public class Node {
