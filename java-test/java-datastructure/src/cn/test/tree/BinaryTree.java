@@ -3,8 +3,8 @@ package cn.test.tree;
 import java.util.Stack;
 
 /**
- * 二叉树
- * @author xyd-yuyilun
+ * 二叉查找树
+ * @author yuyilun
  * 四种主要的遍历思想为：
  * 前序遍历：根结点 ---> 左子树 ---> 右子树	:前序遍历首先访问根结点然后遍历左子树，最后遍历右子树。Preorder Traversal (DLR)
  * 中序遍历：左子树---> 根结点 ---> 右子树	，根节点在中间
