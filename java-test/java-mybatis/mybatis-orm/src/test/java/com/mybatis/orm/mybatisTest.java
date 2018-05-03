@@ -1,6 +1,7 @@
 package com.mybatis.orm;
 
-import org.junit.jupiter.api.Test;
+
+import org.junit.Test;
 
 import com.mybatis.orm.core.Sqlsession;
 import com.mybatis.orm.mapper.UserMapper;
