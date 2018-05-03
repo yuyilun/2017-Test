@@ -1,4 +1,4 @@
-package cn.test.tree;
+package cn.test.heap;
 
 import java.util.Arrays;
 
